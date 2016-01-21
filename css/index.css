@@ -1,0 +1,14 @@
+*{margin:0;padding:0;}
+
+
+.header{width:100%;height:50px;background:#000;color:#fff;text-align:center;line-height:50px;font-size:20px;}
+.main{width:1000px;height:auto;border:1px solid #ccc;border-radius:5px;box-shadow:1px 1px 3px #ccc;margin:10px auto;}
+
+.footer{width:1000px;height:50px;text-align:center;line-height:50px;font-size:12px;color:#349BB9;margin:10px auto;}
+
+.out_box{border:1px solid #ccc; background:#fff; font:12px/20px Tahoma;}
+.list_box{border-bottom:1px solid #eee; padding:0 5px; cursor:pointer;}
+.focus_box{border-bottom:1px solid #eee; padding:0 5px; cursor:pointer; background:#f0f3f9;}
+.mark_box{color:#c00;}
+
+span.error{color:#F00;padding-left:10px;}

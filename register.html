@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>注册</title>
+<link rel="stylesheet" href="./css/bootstrap.min.css" />
+<link rel="stylesheet" href="./css/index.css" />
+<link rel="stylesheet" href="./css/datetimepicker.css" />
+<script type="text/javascript" src="./js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/jquery-validate.js"></script>
+<script type="text/javascript" src="./js/validate.js"></script>
+<script type="text/javascript" src="./js/jquery.mailAutoComplete-3.1.js"></script>
+</head>
+
+<body>
+
+<div class="header">注册dome</div>
+
+<div class="main">
+<form action="" id="register" method="post">
+ <table class="table table-hover">
+   <tr>
+   	<td style="border-right:1px solid #ccc;width:40%;"><i class="icon-user"></i>用户名：</td>
+   	<td style="height:30px;"><input type="text" name="username" id="username" /></td>
+   </tr>
+   <tr>
+   	<td style="border-right:1px solid #ccc;"><i class="icon-star"></i>密码：</td>
+   	<td style="height:30px;"><input type="password" name="password" id="password" /></td>
+   </tr>
+   <tr>
+   	<td style="border-right:1px solid #ccc;"><i class="icon-star"></i>确认密码：</td>
+   	<td style="height:30px;"><input type="password" name="rpassword" id="rpassword" /></td>
+   </tr>
+   <tr>
+   	<td style="border-right:1px solid #ccc;"><i class="icon-envelope"></i>邮箱</td>
+   	<td style="height:30px;"><input type="text" name="email" id="email" /></td>
+   </tr>
+   <tr>
+   	<td style="border-right:1px solid #ccc;"><i class="icon-bookmark"></i>性别</td>
+   	<td style="height:30px;">
+    <input type="radio" name="sex" id="sex" value="1" checked="checked" />男&nbsp;&nbsp;
+    <input type="radio" name="sex" value="0" id="sex" />女</td>
+   </tr>
+   <tr>
+   	<td style="border-right:1px solid #ccc;"><i class="icon-align-justify"></i>出生日期</td>
+   	<td style="height:30px;">
+    <div class="controls input-append date form_datetime" data-date="2012-08-02" data-date-format="dd MM yyyy" data-link-field="dtp_input1">
+                    <input size="16" type="text" value="" name="birthday" id="birthday" readonly>
+                    <span class="add-on"><i class="icon-remove"></i></span>
+					<span class="add-on"><i class="icon-th"></i></span>
+                </div>
+				<input type="hidden" id="dtp_input1" value="" /></td>
+   </tr>
+   <tr>
+   	<td style="border-right:1px solid #ccc;"><i class="icon-home"></i>家庭地址：</td>
+   	<td style="height:30px;"><input type="text" name="address" id="address" /></td>
+   </tr>
+   <tr>
+   	<td style="border-right:1px solid #ccc;"><i class="icon-leaf"></i>年龄：</td>
+   	<td style="height:30px;"><input type="text" name="old" id="old" /></td>
+   </tr>
+    <tr>
+   	<td style="border-right:1px solid #ccc;"><i class="icon-list-alt"></i>手机号码：</td>
+   	<td style="height:30px;"><input type="text" name="tel" id="tel" /></td>
+   </tr>
+   <tr>
+   	<td colspan="2" style="height:30px;"><input type="submit" value="注册" class="btn btn-info" style="display:block;margin:0 auto;"/></td>
+   </tr>
+ </table>
+</form>
+ <!--日期插件 引入-->
+ <!--记住一点，这个必须要在调用地方之后引入 别问我为什么 哈哈 这个也不是我写的 -->
+<script type="text/javascript" src="./js/bootstrap-datetimepicker.js"></script>
+<!-- 修改语言文件-->
+<script type="text/javascript" src="./js/bootstrap-datetimepicker.de.js"></script>
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        language:  'de',//这里调用语言包
+		format: 'yyyy-mm-dd',//设置日期格式
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+        showMeridian: 1,
+		
+		
+    });
+</script>
+<!-- 日期插件end-->
+
+<!--邮箱插件 -->
+<script type="text/javascript"> 
+	$("#email").mailAutoComplete({
+	    ///调用方法：例如$("#customTest") 则在id为customTest里进行提示
+		boxClass: "out_box", //外部box样式
+		listClass: "list_box", //默认的列表样式
+		focusClass: "focus_box", //列表选样式中
+		markCalss: "mark_box", //高亮样式
+		autoClass: false,
+		textHint: true, //提示文字自动隐藏
+		hintText: "请输入邮箱地址"
+	});
+</script>
+<!--邮箱插件结束 -->
+</div>
+
+<div class="footer">希望我的笑能清朗所有的天~~~~by~~ 杨先森O(∩_∩)O~</div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+$(function(){
+	$('#register').validate({
+		errorElement:'span',
+		success:function(label){
+			label.addClass('success');
+			},
+		rules:{
+			'username':{
+				required:true,
+				rangelength:[3,17],
+				remote:{
+					url:checkUsername,
+					type:'post',
+					datatype:'json',
+					data:{
+						username:function(){
+							return $('#username').val();
+							}
+						}
+					}
+				},
+			'password':{
+				required:true,
+				rangelength:[6,17]
+				},
+			'rpassword':{
+				required:true,
+				equalTo:'#password'
+				},
+			'email':{
+				required:true,
+				email:true
+				},
+			'sex':{
+				required:true
+				},
+			'birthday':{
+				required:true,
+				date:true
+				},
+			'address':{
+				required:true
+				},
+			'old':{
+				required:true,
+				digits: true,
+				rangelength:[1,3]
+				},
+			'tel':{
+				required:true,
+				digits: true,
+				rangelength:[0,11]
+				}
+			},
+		messages:{
+			'username':{
+				required:'用户名必须填写',
+				rangelength:'用户名长度应在3-17位之间',
+				remote:'用户名已存在'
+				},
+			'password':{
+				required:'密码必须填写',
+				rangelength:'密码必须在6-17位之间'
+				},
+			'rpassword':{
+				required:'确认密码必须填写',
+				equalTo:'两次密码不一致'
+				},
+			'email':{
+				required:'邮箱必须填写',
+				email:'邮箱格式不正确'
+				},
+			'sex':{
+				required:'请选择性别'
+				},
+			'birthday':{
+				required:true
+				},
+			'address':{
+				required:'请填写地址',
+				date:'日期格式不正确'
+				},
+			'old':{
+				required:'请填写年龄',
+				digits: '您输入的不是数字',
+				rangelength:'您输入的年龄不符合格式（ps：吓死我了）'
+                 },
+			'tel':{
+				required:'请填写电话号码',
+				digits: '您输入的不是数字',
+				rangelength:'请输入正确格式的电话号码（ps：需要11位）'
+                }
+			}
+		
+		});
+		
+		
+	});
